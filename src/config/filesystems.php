@@ -60,6 +60,22 @@ return [
             'report' => false,
         ],
 
+        // 署名付きURL生成専用ディスク。アップロード/一覧は 's3'（コンテナ内
+        // エンドポイント minio:9000）で行い、URL生成はこちら（ブラウザが
+        // 到達できる localhost:9000）で行うことで署名のホスト不一致を防ぐ。
+        // 署名はローカル計算のみで MinIO への通信は発生しない。
+        's3_public' => [
+            'driver' => 's3',
+            'key' => env('AWS_ACCESS_KEY_ID'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY'),
+            'region' => env('AWS_DEFAULT_REGION'),
+            'bucket' => env('AWS_BUCKET'),
+            'endpoint' => env('MINIO_PUBLIC_ENDPOINT', env('AWS_ENDPOINT')),
+            'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
+            'throw' => false,
+            'report' => false,
+        ],
+
     ],
 
     /*

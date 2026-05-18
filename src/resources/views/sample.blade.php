@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サンプルページ</title>
+</head>
+<body>
+    <h1>サンプルビュー</h1>
+    <p>こんにちは、{{ $name }} さん！</p>
+</body>
+</html>
