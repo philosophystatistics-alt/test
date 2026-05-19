@@ -118,3 +118,8 @@ Route::get('/images', [ImageController::class, 'index'])
 Route::post('/images', [ImageController::class, 'store'])
     ->name('images.store');
 
+// API を叩く学習用プレイグラウンド画面（画面内の JS から /api/* を呼ぶ）
+Route::get('/api-playground', function () {
+    return view('api-playground.index');
+})->name('api.playground');
+

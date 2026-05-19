@@ -303,6 +303,8 @@
            class="{{ request()->routeIs('greetings.*') ? 'active' : '' }}">挨拶一覧</a>
         <a href="{{ route('images.index') }}"
            class="{{ request()->routeIs('images.*') ? 'active' : '' }}">画像アップロード</a>
+        <a href="{{ route('api.playground') }}"
+           class="{{ request()->routeIs('api.playground') ? 'active' : '' }}">API 練習</a>
     </nav>
 
     <div class="container">
